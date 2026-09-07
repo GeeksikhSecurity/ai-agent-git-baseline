@@ -1,0 +1,37 @@
+---
+description: Intent-layer rules for AI-agent-authored git activity — pair with server-side branch protection
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Agent Git Baseline
+
+This is the intent layer only. It is advisory — an agent can ignore it, and
+nothing here is copied or enforced by a plain `git clone`. Real enforcement is
+server-side (branch rulesets, required status checks, push protection, signed
+commits) — see this repo's README.
+
+## Rules
+
+1. Never assume a local pre-commit hook will catch anything. Hooks live in
+   `.git/hooks`, are not copied by clone, and are not run by API-driven agent
+   pushes.
+2. Small, single-concern commits — one intent per commit.
+3. State blast radius in the commit message or PR description for anything
+   touching shared, security-relevant, or trust-boundary code.
+4. Do not self-approve. If this agent opened the PR, it does not also approve
+   it, merge without required review, or bypass a required status check.
+5. A "Verified" badge on a commit is not proof of human review — server-created
+   commits can carry it too. Don't cite the badge as review evidence.
+6. Flag anything shaped like a hallucinated bulk change (many PRs in a short
+   window, especially touching credentials/config/CI) and confirm with the
+   user before pushing.
+
+## Why this needs a server-side layer too
+
+Client-side controls (local hooks) are bypassed entirely by API-driven agents —
+they don't run a local git process, and cloning never copies `.git/hooks`. An
+agent hallucinating from a malformed prompt can open dozens of PRs overnight
+with plaintext credentials, sailing past a secret scanner that only runs as a
+pre-commit hook. This rule file is step 1 of 3 (intent → enforcement →
+attribution) — see the README for the other two.
