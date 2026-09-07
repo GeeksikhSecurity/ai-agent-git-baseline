@@ -1,0 +1,27 @@
+LICENSE
+  s_b5770ba419a427::t_5019c3170b5184 1-21
+README.md
+  s_b5770ba419a427::t_baa504ada1fff4 1-125
+.cursor/rules/agent-git-baseline.mdc
+  s_b5770ba419a427::t_6fc32dce16ca7c 1-37
+CLAUDE.md
+  s_b5770ba419a427::t_5b107d8c6218ce 1-61
+codex/AGENTS.md
+  s_b5770ba419a427::t_ddde75943374b9 1-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "df2ff2b004831aea4ec9849954e3b6668e0378b6",
+  "prompts": {},
+  "sessions": {
+    "s_b5770ba419a427": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0d2e6d12-cee9-445d-9118-6ba500aa7942",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "GeeksikhSecurity <gurvinder@sayvainc.com>"
+    }
+  }
+}
