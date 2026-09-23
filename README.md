@@ -1,5 +1,7 @@
 # ai-agent-git-baseline
 
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/GeeksikhSecurity/ai-agent-git-baseline/badge)](https://securityscorecards.dev/viewer/?uri=github.com/GeeksikhSecurity/ai-agent-git-baseline) [![Security Policy](https://img.shields.io/badge/security-policy-blue)](https://github.com/GeeksikhSecurity/ai-agent-git-baseline/security/policy)
+
 > Minimum security-baseline rule for Claude Code, Codex, and Cursor. This free
 > rule closes a real gap in each tool's built-in review. Full ruleset +
 > implementation guide: **[Gumroad link — coming soon]**.
