@@ -23,13 +23,17 @@ security-artifacts:
   self-assessment:
     self-assessment-created: false
 security-testing:
-  - tool-type: scorecard
-    tool-name: 'OpenSSF Scorecard'
-    tool-url: 'https://github.com/ossf/scorecard'
+  - name: 'OpenSSF Scorecard'
+    type: other
+    url: 'https://github.com/ossf/scorecard'
+    rulesets:
+      - default
     integration:
-      ad-hoc: false
+      adhoc: false
       ci: true
-      before-release: false
+      release: false
+    results: {}
+    comment: 'Scorecard type is ''other'' — the security-insights-spec tool-type enum (SCA/SAST/container/secret/fuzzing/other) has no ''scorecard'' value.'
 security-contacts:
   - type: email
     value: security@geeksikh.com
